@@ -14,3 +14,15 @@
  *= require_tree .
  *= require_self
  */
+
+ :root {
+    --primary-color: #F08429;
+    --secondary-color: #207395;
+    --third-color: #084152;
+    --fourth-color: #ffd510;
+    --fourth-color: #626262;
+ }
+* {
+   margin: 0px;
+   padding: 0px;
+}
