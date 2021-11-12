@@ -1,5 +1,6 @@
 class TeamsController < ApplicationController
   def index
+    @pokemons = PokeApi.get(pokemon: {limit: 5})
   end
   
   def show

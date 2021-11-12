@@ -1,1 +1,22 @@
-tela inicial dos times
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">imagem</th>
+      <th scope="col">imagem de frente</th>
+      <th scope="col">add</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @pokemons.results.each do |pokemon| %>
+    <tr>
+      <td><%= PokeApi.get(pokemon: pokemon.name).name.capitalize %></td>
+      <td><%= PokeApi.get(pokemon: pokemon.name).types.first.type.name.capitalize %></td>
+      <td><%= image_tag PokeApi.get(pokemon: pokemon.name).sprites.back_default, height: '150px' %></td>
+      <td><%= image_tag PokeApi.get(pokemon: pokemon.name).sprites.front_default, height: '150px' %></td>
+      <td>add +</td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
