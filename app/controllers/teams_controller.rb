@@ -1,6 +1,7 @@
 class TeamsController < ApplicationController
   def index
     @pokemons = PokeApi.get(pokemon: {limit: 5})
+    @team = Team.new
   end
   
   def show
@@ -12,6 +13,12 @@ class TeamsController < ApplicationController
   end
   
   def create
+    @team = Team.new values
+    if @team.save!
+      redirect_to teams_path
+    else
+      render :new
+    end
   end
   
   def edit
@@ -21,5 +28,11 @@ class TeamsController < ApplicationController
   end
   
   def destroy
+  end
+
+  private
+
+  def values
+    params.require(:team).permit!
   end
 end

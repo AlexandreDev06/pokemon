@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "home#index"
+  root "teams#index"
 
   devise_for :trainers
   resources :teams
