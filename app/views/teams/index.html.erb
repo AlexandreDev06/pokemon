@@ -1,1 +1,46 @@
-tela inicial dos times
+<div class="row">
+  <div class="col-md-6">
+    <h2 class="text-center mt-2">Seus times de batalha</h2>
+    <hr>
+    <% current_trainer.teams.each do |team| %>
+      <h2 class="text-center"><%= team.name.capitalize %></h2>
+      <% team.pokes.each do |poke|%>
+        <%= image_tag PokeApi.get(pokemon: poke.name).sprites.front_default, height: '100px' %>
+      <% end %>
+    <% end %>
+    <hr>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Novo Time
+    </button>
+  </div>
+  <div class="col-md-6 bg-primary">
+    <h2>Todos os seus pokemons</h2>
+    <% current_trainer.teams.each do |team| %>
+      <% team.pokes.each do |poke|%>
+        <%= image_tag PokeApi.get(pokemon: poke.name).sprites.front_default, height: '100px' %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= form_with model: @team do |f| %>
+        <div class="form-group">
+          <%= f.label 'Nome do Time' %>
+          <%= f.text_field :name, class: "form-control mb-3" %>
+          <%= f.hidden_field :trainer_id, value: current_trainer.id %>
+        </div>
+          <%= f.submit 'Salvar', class: 'btn btn-success' %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
