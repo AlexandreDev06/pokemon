@@ -6,15 +6,21 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
   </head>
 
   <body>
-  <%= render 'layouts/menu' %>
-    <div class="container">
+  <%= render "layouts/topbar" %>
+  <div class="row">
+    <div class="col-md-2">
+      <%= render "layouts/sidebar" %>
+    </div>
+    <div class="col-md-10">
       <%= yield %>
     </div>
+  </div>
   </body>
 </html>

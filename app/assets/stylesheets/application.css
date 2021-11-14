@@ -16,14 +16,42 @@
  */
 
  :root {
-    --primary-color: #F08429;
-    --secondary-color: #207395;
-    --third-color: #084152;
-    --fourth-color: #ffd510;
-    --fourth-color: #626262;
- }
+  --primary-color: #F08429;
+  --secondary-color: #207395;
+  --third-color: #084152;
+  --fourth-color: #ffd510;
+  --fourth-color: #626262;
+}
+
 * {
-   margin: 0px;
-   padding: 0px;
-   font-family: 'DotGothic16', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'DotGothic16', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.btn {
+   background-color: var(--third-color);
+   color: white;
+}
+/*SIDEBAR*/
+
+#sidebar-wrapper,
+.navbar,
+.list-group-item-action {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: 0;
+  border-right: 1px solid black;
+}
+
+.navbar {
+  border-bottom: 1px solid black;
 }
