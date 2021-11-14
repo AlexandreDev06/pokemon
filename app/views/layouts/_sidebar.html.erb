@@ -1,9 +1,11 @@
 <div class="" id="sidebar-wrapper">
   <div class="list-group list-group-flush">
     <button type="button" class="list-group-item list-group-item-action list-group-item-ligth p-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <i class="bi bi-people-fill"></i> Novo Time
+      <i class="bi bi-people-fill text-dark"></i> Novo Time
     </button>
-    <a class="list-group-item list-group-item-action list-group-item-ligth p-3" href="#!">Dashboard</a>
+    <%= link_to new_poke_path, class: 'list-group-item list-group-item-action list-group-item-light p-3' do %>
+      <%= image_tag ('pokeball.ico'), alt: '', width: '25px', height: "25px" %> Adicionar Pokemon
+    <% end %>
     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>

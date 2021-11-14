@@ -1,7 +1,7 @@
 <nav class="navbar">
   <div class="container-fluid">
     <a class="navbar-brand text-light" href="/">Pokemon</a>
-    <%= link_to destroy_trainer_session_path, class: "fs-5 me-5 text-decoration-none text-light" do %>
+    <%= link_to destroy_trainer_session_path, method: :delete, class: "fs-5 me-5 text-decoration-none text-light" do %>
       Logout <i class="bi bi-power text-light"></i>
     <% end %>
   </div>
