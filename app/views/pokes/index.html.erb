@@ -1,3 +1,13 @@
-index
-
-<%= link_to 'Novo pokemon', new_poke_path(@team), class: 'link' %>
+<div class="index-poke">
+  <h1 class="text-center">Todos os Pokemons</h1>
+  <div class="row">
+    <% @pokemons.each do |pokemon| %>
+      <div class="col-md-1 me-2 text-center"> 
+        <%= link_to poke_path(pokemon.name) do %>
+          <%= image_tag PokeApi.get(pokemon: pokemon.name).sprites.front_default, height: "150px" %>
+        <% end %>
+        <%= pokemon.name.capitalize %>
+      </div>
+    <% end %>
+  </div>
+</div>
