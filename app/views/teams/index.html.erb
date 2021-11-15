@@ -5,7 +5,9 @@
     <% current_trainer.teams.each do |team| %>
       <h2 class="text-center"><%= team.name.capitalize %></h2>
       <% team.pokes.each do |poke|%>
-        <%= image_tag PokeApi.get(pokemon: poke.name).sprites.front_default, height: '100px' %>
+        <%= link_to edit_poke_path(poke), class: 'text-decoration-none' do %>
+          <%= image_tag PokeApi.get(pokemon: poke.name).sprites.front_default, height: '100px' %>
+        <% end %>
       <% end %>
     <% end %>
     <hr>
@@ -14,7 +16,9 @@
     <h2>Todos os seus pokemons</h2>
     <% current_trainer.teams.each do |team| %>
       <% team.pokes.each do |poke|%>
-        <%= image_tag PokeApi.get(pokemon: poke.name).sprites.front_default, height: '100px' %>
+        <%= link_to edit_poke_path(poke), class: 'text-decoration-none' do %>
+          <%= image_tag PokeApi.get(pokemon: poke.name).sprites.front_default, height: '100px' %>
+        <% end %>
       <% end %>
     <% end %>
   </div>

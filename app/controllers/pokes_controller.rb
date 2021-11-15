@@ -1,4 +1,6 @@
 class PokesController < ApplicationController
+  before_action :set_pokemon, only: %i[edit update destroy]
+
   def index
     @pokemons = PokeApi.get(pokemon: { limit: 55 }).results
   end
@@ -19,14 +21,25 @@ class PokesController < ApplicationController
   end
 
   def edit
+    @teams = current_trainer.teams
+    @poke = PokeApi.get(pokemon: @pokemon.name)
   end
 
   def update
+    if @pokemon.update values
+      redirect_to teams_path
+    else
+      render :edit
+    end
   end
 
   def destroy
+    if @pokemon.destroy!
+      redirect_to teams_path
+    else
+      render :edit
+    end
   end
-
   private
 
   def values

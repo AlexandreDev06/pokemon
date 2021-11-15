@@ -39,7 +39,7 @@ body {
   padding: 0;
 }
 
-.btn {
+.btn-secondary {
   background-color: var(--third-color);
   color: white;
 }

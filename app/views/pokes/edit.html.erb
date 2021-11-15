@@ -1,0 +1,28 @@
+<div class="index-poke">
+  <h1 class='text-center'>Editando <%= @poke.name.capitalize %></h1>
+  <div class="row">
+    <div class="col-md-5">
+      <%= image_tag @poke.sprites.front_default, alt: "Poke", height: "500px", class: 'ms-5 bg-card' %>
+    </div>
+    <div class="col-md-6 mt-5">
+      <h3 class='mb-3'>Tipos: <% @poke.types.each do |tipo| %>
+                  <%= image_tag "types/#{tipo.type.name}.svg" %>
+                <% end %>
+      </h3>
+      <h3 class='mb-3'>Hp: <strong><%= @poke.stats.first.base_stat %></strong></h3>
+      <h3 class='mb-3'>Attack: <strong><%= @poke.stats.second.base_stat %></strong></h3>
+      <h3 class='mb-3'>Defense: <strong><%= @poke.stats.third.base_stat %></strong></h3>
+      <h3 class='mb-3'>Special Attack: <strong><%= @poke.stats.fourth.base_stat %></strong></h3>
+      <h3 class='mb-3'>Special Defense: <strong><%= @poke.stats.fifth.base_stat %></strong></h3>
+      <h3 class='mb-3'>Speed: <strong><%= @poke.stats.last.base_stat %></strong></h3>
+      <hr>
+      <%= form_with model: @pokemon do |form| %>
+        <%= form.label 'Mudar de Time:', class: "fs-4" %>
+        <%= form.select :team_id, @teams.map {|t| [t.name, t.id]}, class: 'form-select'%>
+        <%= form.hidden_field :name, value: @poke.name %>
+        <%= form.submit 'Salvar', class: "btn btn-secondary ms-5" %>
+        <%= link_to 'Deletar', poke_path(@pokemon), method: :delete, data: {confirm: "Deletar #{@poke.name.capitalize}?"}, class: 'btn btn-danger' %>
+      <% end %>
+    </div>
+  </div>
+</div>
