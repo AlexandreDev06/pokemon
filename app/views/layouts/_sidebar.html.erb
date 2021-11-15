@@ -1,10 +1,11 @@
 <div class="" id="sidebar-wrapper">
   <div class="list-group list-group-flush">
-    <button type="button" class="list-group-item list-group-item-action list-group-item-ligth p-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <i class="bi bi-people-fill text-dark fs-4"></i> Novo Time
-    </button>
+    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/"><i class="bi bi-house text-dark fs-4"></i> Inicio</a>
     <%= link_to pokes_path, class: 'list-group-item list-group-item-action list-group-item-light p-3' do %>
       <%= image_tag ('pokeball.ico'), alt: '', width: '25px', height: "25px" %> Adicionar Pokemon
+    <% end %>
+    <%= link_to  teams_path, class: 'list-group-item list-group-item-action list-group-item-light p-3' do %>
+      <%= image_tag ('pokebolas.png'), alt: '', width: '30px', height: "30px" %> Times
     <% end %>
     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
