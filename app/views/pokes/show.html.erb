@@ -2,19 +2,19 @@
   <h1 class='text-center'><%= @pokemon.name.capitalize %></h1>
   <div class="row">
     <div class="col-md-5">
-      <%= image_tag @pokemon.sprites.front_default, alt: "Pokemon", height: "500px", class: 'ms-5 bg-card' %>
+      <%= image_tag @pokemon.image, alt: "Pokemon", height: "500px", class: 'ms-5 bg-card' %>
     </div>
     <div class="col-md-6 mt-5">
-      <h3 class='mb-3'>Tipos: <% @pokemon.types.each do |tipo| %>
+      <h3 class='mb-3'>Tipos: <% PokeApi.get(pokemon: @pokemon.name).types.each do |tipo| %>
                   <%= image_tag "types/#{tipo.type.name}.svg" %>
                 <% end %>
       </h3>
-      <h3 class='mb-3'>Hp: <strong><%= @pokemon.stats.first.base_stat %></strong></h3>
-      <h3 class='mb-3'>Attack: <strong><%= @pokemon.stats.second.base_stat %></strong></h3>
-      <h3 class='mb-3'>Defense: <strong><%= @pokemon.stats.third.base_stat %></strong></h3>
-      <h3 class='mb-3'>Special Attack: <strong><%= @pokemon.stats.fourth.base_stat %></strong></h3>
-      <h3 class='mb-3'>Special Defense: <strong><%= @pokemon.stats.fifth.base_stat %></strong></h3>
-      <h3 class='mb-3'>Speed: <strong><%= @pokemon.stats.last.base_stat %></strong></h3>
+      <h3 class='mb-3'>Hp: <strong><%= @pokemon.hp %></strong></h3>
+      <h3 class='mb-3'>Attack: <strong><%= @pokemon.attack %></strong></h3>
+      <h3 class='mb-3'>Defense: <strong><%= @pokemon.defense %></strong></h3>
+      <h3 class='mb-3'>Special Attack: <strong><%= @pokemon.special_attack %></strong></h3>
+      <h3 class='mb-3'>Special Defense: <strong><%= @pokemon.special_defense %></strong></h3>
+      <h3 class='mb-3'>Speed: <strong><%= @pokemon.speed %></strong></h3>
       <hr>
       <%= form_with model: @poke do |form| %>
         <%= form.label 'Selecione o time:', class: "fs-4" %>

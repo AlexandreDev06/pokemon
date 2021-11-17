@@ -3,11 +3,14 @@
   <div class="row">
     <% @pokemons.each do |pokemon| %>
       <div class="col-md-1 me-2 text-center"> 
-        <%= link_to poke_path(pokemon.name) do %>
-          <%= image_tag PokeApi.get(pokemon: pokemon.name).sprites.front_default, height: "150px" %>
+        <%= link_to poke_path(pokemon) do %>
+          <%= image_tag pokemon.image, height: "150px" %>
         <% end %>
         <%= pokemon.name.capitalize %>
       </div>
     <% end %>
+  </div>
+  <div class="ms-5 mt-5 text-dark">
+    <%= paginate @pokemons%>
   </div>
 </div>

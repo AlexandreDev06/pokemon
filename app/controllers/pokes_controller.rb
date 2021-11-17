@@ -1,12 +1,12 @@
 class PokesController < ApplicationController
   before_action :set_pokemon, only: %i[edit update destroy]
+  before_action :set_wild, only: %i[show]
 
   def index
-    @pokemons = PokeApi.get(pokemon: { limit: 55 }).results
+    @pokemons = Wild.all.page(params[:page])
   end
 
   def show
-    @pokemon = PokeApi.get(pokemon: (params[:id]))
     @teams = current_trainer.teams
     @poke = Poke.new
   end
@@ -40,6 +40,7 @@ class PokesController < ApplicationController
       render :edit
     end
   end
+
   private
 
   def values
@@ -48,5 +49,9 @@ class PokesController < ApplicationController
 
   def set_pokemon
     @pokemon = Poke.find(params[:id])
+  end
+
+  def set_wild
+    @pokemon = Wild.find(params[:id])
   end
 end
