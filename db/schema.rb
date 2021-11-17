@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_12_184147) do
+ActiveRecord::Schema.define(version: 2021_11_17_025519) do
 
   create_table "pokes", force: :cascade do |t|
     t.string "name"
@@ -41,6 +41,19 @@ ActiveRecord::Schema.define(version: 2021_11_12_184147) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_trainers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_trainers_on_reset_password_token", unique: true
+  end
+
+  create_table "wilds", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.string "hp"
+    t.string "attack"
+    t.string "defense"
+    t.string "special_attack"
+    t.string "special_defense"
+    t.string "speed"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "pokes", "teams"
