@@ -1,5 +1,13 @@
 <div class="index-poke">
-  <h1 class="text-center">Todos os Pokemons</h1>
+  <div class="row pt-3">
+    <div class="col">
+      <h1 class="text-center">Todos os Pokemons</h1>
+    </div>
+    <div class="mb-3 col input-group me-5">
+      <input type="text" class="form-control" placeholder="Pesquise o nome do pokemon" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <button class="btn btn-secondary" type="button" id="button-addon2">Pesquisar</button>
+    </div>
+  </div>
   <div class="row">
     <% @pokemons.each do |pokemon| %>
       <div class="col-md-1 me-2 text-center"> 
@@ -10,7 +18,7 @@
       </div>
     <% end %>
   </div>
-  <div class="ms-5 mt-5 text-dark">
+  <div class="ms-5 mt-5">
     <%= paginate @pokemons%>
   </div>
 </div>
