@@ -10,6 +10,7 @@
     <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <%= favicon_link_tag asset_path('pokeball.ico') %>
   </head>
 
   <body>
@@ -24,7 +25,15 @@
       </div>
     </div>
   <% else %>
-    <%= yield %>
+    <div class='bg-pokemon'>
+      <div class="container">
+        <div class="login-page">
+          <article class="card-body">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
   </body>
 </html>
