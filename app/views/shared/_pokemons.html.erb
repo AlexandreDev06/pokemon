@@ -1,0 +1,24 @@
+<div class="index-poke">
+  <div class="row pt-3">
+    <div class="col">
+      <h1 class="text-center">Todos os Pokemons</h1>
+    </div>
+    <%= form_with url: search_path, method: :get, local: true, class: "mb-3 col input-group me-5" do |form| %>
+      <%= form.text_field :term, class: "form-control", placeholder: 'Digite o nome do pokemon...' %>
+      <%= form.submit :Pesquisar, class: 'btn btn-secondary' %>
+    <% end %>
+  </div>
+  <div class="row">
+    <% @pokemons.each do |pokemon| %>
+      <div class="col-md-1 me-2 text-center"> 
+        <%= link_to poke_path(pokemon) do %>
+          <%= image_tag pokemon.image, height: "150px" %>
+        <% end %>
+        <%= pokemon.name.capitalize %>
+      </div>
+    <% end %>
+  </div>
+  <div class="ms-5 mt-5">
+    <%= paginate @pokemons %>
+  </div>
+</div>
