@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-for i in 200..400
+for i in 400..450
   Wild.new(name: PokeApi.get(pokemon: i).name,
            image: PokeApi.get(pokemon: i).sprites.front_default,
            hp: PokeApi.get(pokemon: i).stats.first.base_stat,
