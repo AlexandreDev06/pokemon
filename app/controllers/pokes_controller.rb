@@ -44,7 +44,7 @@ class PokesController < ApplicationController
   private
 
   def values
-    params.require(:poke).permit(:name, :team_id)
+    params.require(:poke).permit!
   end
 
   def set_pokemon
