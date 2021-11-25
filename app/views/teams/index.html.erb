@@ -41,6 +41,7 @@
           <%= f.label 'Nome do Time' %>
           <%= f.text_field :name, class: "form-control mb-3" %>
           <%= f.hidden_field :trainer_id, value: current_trainer.id %>
+          <%= f.hidden_field :pokemons, value: 0 %>
         </div>
           <%= f.submit 'Salvar', class: 'btn btn-success' %>
         <% end %>

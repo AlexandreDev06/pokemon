@@ -18,7 +18,7 @@
       <hr>
       <%= form_with model: @poke do |form| %>
         <%= form.label 'Selecione o time:', class: "fs-4" %>
-        <%= form.select :team_id, @teams.map {|t| [t.name, t.id]}, class: 'form-select'%>
+        <%= form.select :team_id, @teams.map {|t| t.full? ? "Selecione" : [t.name, t.id]}, class: 'form-select'%>
         <%= form.hidden_field :name, value: @pokemon.name %>
         <%= form.hidden_field :hp, value: @pokemon.hp %>
         <%= form.hidden_field :attack, value: @pokemon.attack %>
