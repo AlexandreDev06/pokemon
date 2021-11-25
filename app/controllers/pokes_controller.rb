@@ -13,10 +13,12 @@ class PokesController < ApplicationController
 
   def create
     @poke = Poke.new values
-    if @poke.save!
+    if @poke.team.pokemons < 3
+      @poke.save!
+      @poke.team.update(pokemons: @poke.team.pokemons += 1)
       redirect_to teams_path
     else
-      render :new
+      render :show
     end
   end
 
@@ -35,6 +37,7 @@ class PokesController < ApplicationController
 
   def destroy
     if @pokemon.destroy!
+      @pokemon.team.update(pokemons: @pokemon.team.pokemons -= 1)
       redirect_to teams_path
     else
       render :edit

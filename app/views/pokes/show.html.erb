@@ -18,7 +18,7 @@
       <hr>
       <%= form_with model: @poke do |form| %>
         <%= form.label 'Selecione o time:', class: "fs-4" %>
-        <%= form.select :team_id, @teams.map {|t| [t.name, t.id]}, class: 'form-select'%>
+        <%= form.select :team_id, @teams.map {|t| t.full? ? "Selecione" : [t.name, t.id]}, class: 'form-select'%>
         <%= form.hidden_field :name, value: @pokemon.name %>
         <%= form.hidden_field :hp, value: @pokemon.hp %>
         <%= form.hidden_field :attack, value: @pokemon.attack %>
@@ -29,6 +29,7 @@
         <%= form.hidden_field :image, value: PokeApi.get(pokemon: @pokemon.name).sprites.front_default %>
         <%= form.submit 'Add +', class: "btn btn-secondary ms-5" %>
       <% end %>
+      <p class="mt-3">* Lembrando que pode ser adicionado no máximo 3 pokemons por time</p>
     </div>
   </div>
 </div>
