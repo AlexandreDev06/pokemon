@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_17_025519) do
+ActiveRecord::Schema.define(version: 2021_11_24_234709) do
 
   create_table "pokes", force: :cascade do |t|
     t.string "name"
     t.integer "team_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
+    t.string "hp"
+    t.string "attack"
+    t.string "defense"
+    t.string "special_attack"
+    t.string "special_defense"
+    t.string "speed"
     t.index ["team_id"], name: "index_pokes_on_team_id"
   end
 
