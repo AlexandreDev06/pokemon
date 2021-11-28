@@ -22,8 +22,8 @@
         <% end %>
         <hr>
         <div class="actions">
-          <%= f.submit "Logar", class: "btn btn-secondary me-3"  %>
-          <%= link_to "Cadastrar", new_registration_path(resource_name), class: "btn btn-primary me-3" %>
+          <%= f.submit "Logar", class: "btn btn-secondary me-3 mb-2" %><br>
+          Novo por aqui? <%= link_to "Cadastra-se", new_registration_path(resource_name), class: "link" %>
         </div>
       <% end %>
     </article>
