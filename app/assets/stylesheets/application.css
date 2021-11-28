@@ -112,3 +112,9 @@ body {
   height: 100vh;
   position: absolute;
 }
+
+/* HOME INDEX */
+.text-creator {
+  margin-top: 46%;
+  font-style: italic;
+}
