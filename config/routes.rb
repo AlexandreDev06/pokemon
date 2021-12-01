@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   devise_for :trainers
   resources :teams
   resources :pokes
+  resources :batles
 
 end

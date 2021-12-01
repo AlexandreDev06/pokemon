@@ -14,7 +14,6 @@
  *= require_tree .
  *= require_self
  */
-
  :root {
   --primary-color: #F08429;
   --secondary-color: #207395;
@@ -112,3 +111,81 @@ body {
   height: 100vh;
   position: absolute;
 }
+
+/* HOME INDEX */
+.text-creator {
+  margin-top: 46%;
+  font-style: italic;
+}
+
+/* BATALHA */
+
+.pokemon-in-battle {
+  background-image: url("../assets/grama_pokemon_battle.png");
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.buttons-battle {
+  background-color: var(--third-color);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-style: ridge;
+  border-color: chocolate;
+  border-width: 10px;
+}
+
+.btn-pokemon {
+  background-color: #E7E5C6;
+  width: 500px;
+  height: 80px;
+  border-style: solid;
+  border-color: var(--primary-color);
+  border-width: 5px;
+}
+
+/* POKEMONS */
+
+.pokemon1 {
+  animation: 0.4s linear 0s both alternate attack;
+  transform: scaleX(-1);
+}
+
+.pokemon2 {
+  animation: 0.4s linear 0.5s both alternate hit;
+}
+
+.stats-pokemon {
+  background-color: #E7E5C6;
+  height: 90px;
+}
+
+.stats-pokemon label {
+  margin-left: 12px;
+}
+
+/* ANIMAÇÃO DE HIT */
+@keyframes hit {
+  0% {margin-left: 0px;}
+  20% {margin-left: -25px}
+  40% {margin-left: 25px}
+  60% {margin-left: -25px}
+  80% {margin-left: 25px}
+  100% {margin-left: 0px}
+}
+
+@keyframes attack {
+  0% {margin-left: 0px}
+  60% {margin-left: -25px}
+  80% {margin-left: 25px}
+  100% {margin-left: 0px}
+}
+
+/* BOOTSTRAP PERSONALIZADO */
+
+.ms-6 {margin-left: 6rem;}
+.ms-7 {margin-left: 7rem;}
+.ms-8 {margin-left: 8rem;}
+.ms-9 {margin-left: 9rem;}
