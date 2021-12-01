@@ -1,0 +1,63 @@
+
+<div class="row ms-6">
+  <div class="card-pokemon1 col-md-5 bg-secondary p-2 border rounded">
+    <div class="row">
+      <div class="stats-pokemon col-md-3 mt-3 ms-3 border border-dark rounded">
+        <label><%= @poke.name.upcase %></label>
+        <br>
+        <label>HP <strong><%= @poke.hp %></strong></label>
+        <div class="bg-success rounded-pill m-2">
+          <br>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="pokemon-in-battle text-center m-2">
+          <%= image_tag @poke.image, size: "400x400", class: "pokemon1" %>
+        </div>
+      </div>
+      <hr class="ms-4 col-md-11 p-1 bg-light">
+      <div class="col-md-4">
+        <p>Trocar de pokemons</p>
+        <%= image_tag @poke.image, size: "80x80" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-pokemon2 col-md-5 bg-primary ms-9 p-2 border rounded">
+    <div class="row">
+      <div class="col-md">
+        <div class="pokemon-in-battle text-center m-2">
+          <%= image_tag @poke.image, size: "400x400", class: "pokemon2" %>
+        </div>
+      </div>
+      <div class="stats-pokemon col-md-3 mt-3 me-3 border border-dark rounded">
+        <label><%= @poke.name.upcase %></label>
+        <br>
+        <label>HP <strong><%= @poke.hp %></strong></label>
+        <div class="bg-success rounded-pill m-2">
+          <br>
+        </div>
+      </div>
+      <hr class="ms-4 col-md-11 p-1 bg-light">
+      <div class="col-md-6">
+        <p>Pokemons inimigos restantes</p>
+        <%= image_tag @poke.image, size: "80x80" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row buttons-battle m-5 p-4 rounded text-cente">
+  <div class="col-md-5 mb-2">
+    <button class="btn btn-pokemon"><h2>ATTACK</h2></button>
+  </div>
+  <div class="col-md-5 mb-2">
+    <button class="btn btn-pokemon"><h2>DEFENSE</h2></button>
+  </div>
+  <div class="col-md-5 mb-2">
+    <button class="btn btn-pokemon"><h2>ITEMS</h2></button>
+  </div>
+  <div class="col-md-5 mb-2">
+    <button class="btn btn-pokemon"><h2>SKIP</h2></button>
+  </div>
+</div>

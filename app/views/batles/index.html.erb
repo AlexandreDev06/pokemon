@@ -1,0 +1,22 @@
+<h2 class="text-center">Bem vindo as batalhas</h2>
+<h4 class="text-center mt-3">Escolha seu time para poder batalhar</h4>
+<div class="row mt-5 ms-2">
+  <% @teams.each do |team|%>
+    <div class="col-md-4 border border-dark">
+      <h3 class="text-center">Time <%= team.name.capitalize %></h3>
+      <hr>
+      <div class="text-center">
+        <% team.pokes.each do |poke| %>
+          <div>
+            <%= image_tag poke.image, alt: 'poke.image'%>
+            <%= poke.name.capitalize %>
+          </div>
+        <% end %>
+      </div>
+      <hr>
+      <div class="text-center">
+        <%= link_to 'Escolho esse time!', batle_path(team), class: 'btn btn-success mb-2' %>
+      </div>
+    </div>
+  <% end %>
+</div>
