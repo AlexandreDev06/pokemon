@@ -1,6 +1,5 @@
 class TeamsController < ApplicationController
   def index
-    @pokemons = PokeApi.get(pokemon: {limit: 5})
     @team = Team.new
   end
   
@@ -8,7 +7,6 @@ class TeamsController < ApplicationController
   end
   
   def new
-    @pokemons = PokeApi.get(pokemon: {limit: 5})
     @team = Team.new
   end
   
