@@ -144,18 +144,22 @@ body {
   border-style: solid;
   border-color: var(--primary-color);
   border-width: 5px;
+  font-size: 2rem;
 }
 
 /* POKEMONS */
 
 .pokemon1 {
-  animation: 0.4s linear 0s both alternate attack;
   transform: scaleX(-1);
 }
 
-.pokemon2 {
-  animation: 0.4s linear 0.5s both alternate hit;
+.pokemon-attack {
+  animation: 0.4s linear 0s both alternate attack;
 }
+
+.pokemon-hit {
+  animation: 0.4s linear 0.5s both alternate hit;
+} 
 
 .stats-pokemon {
   background-color: #E7E5C6;
