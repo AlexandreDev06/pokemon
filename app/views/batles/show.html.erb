@@ -4,22 +4,24 @@
   <div class="card-pokemon1 col-md-5 bg-secondary p-2 border rounded">
     <div class="row">
       <div class="stats-pokemon col-md-3 mt-3 ms-3 border border-dark rounded">
-        <label><%= @poke.name.upcase %></label>
+        <label><%= @team.pokes.first.name.upcase %></label>
         <br>
-        <label>HP <strong id="hp_poke1"><%= @poke.hp %></strong></label>
+        <label>HP <strong id="hp_poke1"><%= @team.pokes.first.hp %></strong></label>
         <div class="bg-success rounded-pill m-2" id="bar_life1">
           <br>
         </div>
       </div>
       <div class="col-md">
         <div class="pokemon-in-battle text-center m-2">
-          <%= image_tag @poke.image, size: "400x400", class: "pokemon1", id: "pokemon_1" %>
+          <%= image_tag @team.pokes.first.image, size: "400x400", class: "pokemon1", id: "pokemon_1" %>
         </div>
       </div>
       <hr class="ms-4 col-md-11 p-1 bg-light">
-      <div class="col-md-4">
+      <div class="col-md-6">
         <p>Trocar de pokemons</p>
-        <%= image_tag @poke.image, size: "80x80" %>
+        <% @team.pokes.each do |poke| %>
+          <%= image_tag poke.image, size: "80x80" %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -28,13 +30,13 @@
     <div class="row">
       <div class="col-md">
         <div class="pokemon-in-battle text-center m-2">
-          <%= image_tag @poke.image, size: "400x400", class: "pokemon2", id: "pokemon_2" %>
+          <%= image_tag @wild_team.first.image, size: "400x400", class: "pokemon2", id: "pokemon_2" %>
         </div>
       </div>
       <div class="stats-pokemon col-md-3 mt-3 me-3 border border-dark rounded">
-        <label><%= @poke.name.upcase %></label>
+        <label><%= @wild_team.first.name.upcase %></label>
         <br>
-        <label>HP <strong id="hp_poke2"><%= @poke.hp %></strong></label>
+        <label>HP <strong id="hp_poke2"><%= @wild_team.first.hp %></strong></label>
         <div class="bg-success rounded-pill m-2" id="bar_life2">
           <br>
         </div>
@@ -42,7 +44,9 @@
       <hr class="ms-4 col-md-11 p-1 bg-light">
       <div class="col-md-6">
         <p>Pokemons inimigos restantes</p>
-        <%= image_tag @poke.image, size: "80x80" %>
+        <% @wild_team.each do |poke| %>
+          <%= image_tag poke.image, size: "80x80" %>
+        <% end %>
       </div>
     </div>
   </div>
