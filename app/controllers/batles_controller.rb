@@ -1,11 +1,13 @@
 class BatlesController < ApplicationController
-  before_action :set_poke, only: %i[attack defense items skip show]
+  before_action :set_team, only: %i[show]
 
   def index
     @teams = current_trainer.teams
   end
 
-  def show; end
+  def show
+    @wild_team = [Wild.first, Wild.second, Wild.third]
+  end
 
   def attack; end
 
@@ -17,7 +19,7 @@ class BatlesController < ApplicationController
 
   private
 
-  def set_poke
-    @poke = Poke.first
+  def set_team
+    @team = Team.find(params[:id])
   end
 end
