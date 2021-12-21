@@ -12,6 +12,7 @@ var bar_life2 = document.getElementById('bar_life2')
 
 pokemon_img_1.classList.add('pokemon-attack')
 pokemon_img_2.classList.add('pokemon-hit')
+document.getElementById('hp_poke2').classList.add("pokemon_life_down")
 button_attack.disabled = true;
 button_defense.disabled = true;
 button_items.disabled = true;
@@ -22,15 +23,18 @@ button_skip.disabled = true;
 setTimeout(function() {
   pokemon_img_1.classList.remove('pokemon-attack');
   pokemon_img_2.classList.remove('pokemon-hit');
+  document.getElementById('hp_poke2').classList.remove("pokemon_life_down")
   pokemon2_life -= 15;
   document.getElementById('hp_poke2').innerHTML = pokemon2_life;
   setTimeout(function() {
     pokemon_img_2.classList.add('pokemon-attack');
     pokemon_img_1.classList.add('pokemon-hit');
+    document.getElementById('hp_poke1').classList.add("pokemon_life_down")
     setTimeout(function() {
       pokemon1_life -= 10;
       document.getElementById('hp_poke1').innerHTML = pokemon1_life;
       pokemon_img_1.classList.remove('pokemon-hit');
+      document.getElementById('hp_poke1').classList.remove("pokemon_life_down")
       pokemon_img_2.classList.remove('pokemon-attack');
 
       button_attack.disabled = false;

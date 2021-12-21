@@ -161,6 +161,10 @@ body {
   animation: 0.4s linear 0.5s both alternate hit;
 } 
 
+.pokemon_life_down {
+  animation: 0.4s linear 0.5s both alternate life_down;
+}
+
 .stats-pokemon {
   background-color: #E7E5C6;
   height: 90px;
@@ -170,7 +174,7 @@ body {
   margin-left: 12px;
 }
 
-/* ANIMAÇÃO DE HIT */
+/* ANIMAÇÃO DE BATALHA */
 @keyframes hit {
   0% {margin-left: 0px;}
   20% {margin-left: -25px}
@@ -186,7 +190,14 @@ body {
   80% {margin-left: 25px}
   100% {margin-left: 0px}
 }
-
+@keyframes life_down {
+  50% {
+    color: red;
+    background-color: red;
+    width: 500px;
+    height: 500px;
+  }
+}
 /* BOOTSTRAP PERSONALIZADO */
 
 .ms-6 {margin-left: 6rem;}
