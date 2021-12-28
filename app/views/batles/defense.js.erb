@@ -1,1 +1,21 @@
-alert("DEFENDEU")
+var pokemon_img_2 = document.getElementById('pokemon_2')
+var button_attack = document.getElementById('attack')
+var button_defense = document.getElementById('defense')
+var button_items = document.getElementById('items')
+var button_skip = document.getElementById('skip')
+
+
+pokemon_img_2.classList.add('pokemon-attack');
+button_attack.disabled = true;
+button_defense.disabled = true;
+button_items.disabled = true;
+button_skip.disabled = true;
+
+setTimeout(function(){
+  pokemon_img_2.classList.remove('pokemon-attack');
+
+  button_attack.disabled = false;
+  button_defense.disabled = false;
+  button_items.disabled = false;
+  button_skip.disabled = false;
+},1000)
