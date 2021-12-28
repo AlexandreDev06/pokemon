@@ -1,12 +1,8 @@
 class Team < ApplicationRecord
   belongs_to :trainer
-  has_many :pokes
+  has_many :pokes, dependent: :destroy
 
   def full?
-    if pokemons >= 3
-      true
-    else
-      false
-    end
+    pokemons >= 3
   end
 end
