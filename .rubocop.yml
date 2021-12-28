@@ -1,12 +1,14 @@
 require: rubocop-rails
 AllCops:
-  TargetRubyVersion: 2.7.2
+  TargetRubyVersion: 2.7.4
   Exclude:
     - 'lib/tasks/**/*'
     - 'bin/**/*'
     - 'setup-dev'
     - 'db/**/*'
     - 'config/environments/**'
+    - 'config/initializers/**'
+    - 'config/puma.rb'
 
 Metrics/BlockLength:
   ignoredMethods: ['describe', 'context', 'feature', 'scenario', 'let']
