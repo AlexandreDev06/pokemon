@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "home#index"
+  root 'home#index'
   get 'search', to: 'search#pokes'
   post 'batles_attack', to: 'batles#attack'
   post 'batles_defense', to: 'batles#defense'
@@ -10,5 +10,4 @@ Rails.application.routes.draw do
   resources :teams
   resources :pokes
   resources :batles
-
 end
